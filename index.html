@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryce • Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        
+        :root {
+            --primary: 234 179 8;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+    <!-- Navbar -->
+    <nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md fixed w-full z-50">
+        <div class="max-w-screen-xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-yellow-400 rounded-2xl flex items-center justify-center text-zinc-950 font-bold text-xl">B</div>
+                <span class="text-2xl font-semibold heading-font tracking-tighter">Bryce</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#" class="hover:text-yellow-400 transition-colors">Work</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">About</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">Journal</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">Contact</a>
+            </div>
+            
+            <button onclick="alert('Thanks for visiting! This is just placeholder content.')"
+                    class="px-6 py-3 bg-white text-zinc-900 rounded-2xl font-semibold text-sm hover:bg-yellow-400 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-paper-plane"></i>
+                Let's talk
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="pt-12">
+                <div class="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-700 rounded-3xl px-4 py-2 text-sm mb-6">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    Available for new projects
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-semibold heading-font tracking-tighter leading-none mb-6">
+                    I build digital<br>experiences that<br><span class="text-yellow-400">matter</span>.
+                </h1>
+                
+                <p class="text-xl text-zinc-400 max-w-md mb-10">
+                    Product designer &amp; developer based in Washington. Currently turning ideas into beautiful, functional software.
+                </p>
+                
+                <div class="flex items-center gap-4">
+                    <button onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 py-4 bg-yellow-400 hover:bg-yellow-300 transition-colors text-zinc-900 font-semibold rounded-3xl flex items-center gap-3 text-lg">
+                        See my work
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    
+                    <a href="#" class="px-8 py-4 border border-zinc-700 hover:border-zinc-400 transition-colors font-medium rounded-3xl">
+                        Download résumé
+                    </a>
+                </div>
+                
+                <div class="flex gap-8 mt-16 text-sm">
+                    <div>
+                        <div class="text-yellow-400 font-mono text-3xl font-semibold">18</div>
+                        <div class="text-zinc-500">Projects shipped</div>
+                    </div>
+                    <div>
+                        <div class="text-yellow-400 font-mono text-3xl font-semibold">7</div>
+                        <div class="text-zinc-500">Happy clients</div>
+                    </div>
+                    <div>
+                        <div class="text-yellow-400 font-mono text-3xl font-semibold">∞</div>
+                        <div class="text-zinc-500">Cups of coffee</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right side visual -->
+            <div class="hidden md:flex justify-end">
+                <div class="relative">
+                    <div class="w-96 h-96 bg-gradient-to-br from-yellow-400 to-amber-600 rounded-[4rem] rotate-12 shadow-2xl overflow-hidden">
+                        <img src="https://picsum.photos/id/1015/800/800" alt="Hero image" 
+                             class="w-full h-full object-cover -rotate-12 scale-110">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-zinc-900 border border-zinc-700 rounded-3xl p-6 max-w-[220px]">
+                        <div class="flex items-center gap-4">
+                            <div class="text-emerald-400">
+                                <i class="fa-solid fa-check-circle text-3xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Latest project live</div>
+                                <div class="text-sm text-zinc-400">TrailFinder • Outdoor app</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 bg-zinc-900">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="text-5xl font-semibold heading-font tracking-tighter">Selected work</h2>
+                <a href="#" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300">
+                    View all projects 
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-zinc-800 rounded-3xl overflow-hidden card-hover group">
+                    <div class="h-64 bg-zinc-700 relative">
+                        <img src="https://picsum.photos/id/1015/800/600" alt="Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-black/70 text-xs px-3 py-1 rounded-full">2025</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs bg-zinc-700 px-3 py-1 rounded-full">React</span>
+                            <span class="text-xs bg-zinc-700 px-3 py-1 rounded-full">Mobile</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">TrailFinder</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">A beautiful hiking app that helps Washington locals discover hidden gems and track their adventures.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-zinc-800 rounded-3xl overflow-hidden card-hover group">
+                    <div class="h-64 bg-zinc-700 relative">
+                        <img src="https://picsum.photos/id/201/800/600" alt="Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-black/70 text-xs px-3 py-1 rounded-full">2025</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs bg-zinc-700 px-3 py-1 rounded-full">Next.js</span>
+                            <span class="text-xs bg-zinc-700 px-3 py-1 rounded-full">AI</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">SummarAI</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">AI-powered meeting notes that actually make sense. Used by 3 startups already.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-zinc-800 rounded-3xl overflow-hidden card-hover group">
+                    <div class="h-64 bg-zinc-700 relative">
+                        <img src="https://picsum.photos/id/301/800/600" alt="Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-black/70 text-xs px-3 py-1 rounded-full">2024</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs bg-zinc-700 px-3 py-1 rounded-full">Webflow</span>
+                            <span class="text-xs bg-zinc-700 px-3 py-1 rounded-full">Branding</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">Olympia Coffee Co.</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Complete brand refresh and e-commerce experience for a local roaster.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="py-24">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <div class="sticky top-28">
+                        <h2 class="text-5xl font-semibold heading-font tracking-tighter mb-8">Hi, I'm Bryce.</h2>
+                        <div class="space-y-6 text-zinc-400">
+                            <p>I grew up in the Pacific Northwest and never left. When I'm not coding or designing, you'll find me hiking, fly fishing, or tinkering with mechanical keyboards.</p>
+                            <p>I've spent the last 6 years helping startups and small businesses bring their ideas to life through thoughtful digital products.</p>
+                        </div>
+                        
+                        <div class="mt-12 flex gap-8">
+                            <div>
+                                <a href="#" class="flex items-center gap-2 hover:text-yellow-400">
+                                    <i class="fa-brands fa-github text-xl"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="flex items-center gap-2 hover:text-yellow-400">
+                                    <i class="fa-brands fa-linkedin text-xl"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="flex items-center gap-2 hover:text-yellow-400">
+                                    <i class="fa-brands fa-x-twitter text-xl"></i>
+                                    <span>Twitter</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7">
+                    <div class="bg-zinc-900 rounded-3xl p-10">
+                        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-6">What I do best</h3>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="space-y-8">
+                                <div>
+                                    <div class="font-semibold mb-1">Product Design</div>
+                                    <div class="text-zinc-400 text-sm">Figma • User Research • Prototyping</div>
+                                </div>
+                                <div>
+                                    <div class="font-semibold mb-1">Frontend Development</div>
+                                    <div class="text-zinc-400 text-sm">React • Next.js • Tailwind • Framer Motion</div>
+                                </div>
+                            </div>
+                            <div class="space-y-8">
+                                <div>
+                                    <div class="font-semibold mb-1">Branding</div>
+                                    <div class="text-zinc-400 text-sm">Identity Systems • Design Systems</div>
+                                </div>
+                                <div>
+                                    <div class="font-semibold mb-1">No-code &amp; Automation</div>
+                                    <div class="text-zinc-400 text-sm">Webflow • Make • Airtable</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16 border-t border-zinc-800">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-yellow-400 rounded-2xl flex items-center justify-center text-zinc-950 font-bold text-xl">B</div>
+                    <span class="text-xl font-semibold">Bryce</span>
+                </div>
+                
+                <div class="text-zinc-500 text-sm">
+                    © 2026 Bryce Thompson. Made with ☕ in Tumwater, WA.
+                </div>
+                
+                <div class="text-xs text-zinc-600">
+                    This is a demo HTML page
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already loaded via CDN
+        console.log("%cThanks for checking out this demo page! 🚀", "color: #eab308; font-family: monospace");
+        
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+</body>
+</html>
